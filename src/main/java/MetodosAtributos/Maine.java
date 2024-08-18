@@ -7,7 +7,7 @@ public class Maine {
         subaru.setFabricante("Subaru");
         subaru.setModelo("Impresa");
         subaru.setCilindrada(2.0);
-        subaru.setColor("Blanco");
+        subaru.setColor(Color.AZUL);
 
 
         System.out.println();
@@ -16,7 +16,7 @@ public class Maine {
         mazda.setFabricante("Mazda");
         mazda.setModelo("rx7");
         mazda.setCilindrada(4.2);
-        mazda.setColor("Verde");
+        mazda.setColor(Color.BLANCO);
 
         System.out.println(subaru.verDetalle());
 
