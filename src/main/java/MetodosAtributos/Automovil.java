@@ -34,6 +34,7 @@ public class Automovil {
 
 
     //Constructores anidados (ahorramos codigo  )
+
     public Automovil() {
         this.id = ++ultimoId;
     }
@@ -96,7 +97,7 @@ public class Automovil {
         return km / (capacidadTanque * (porcentajeBencina / 100f));
     }
 
-    //Setter and getters
+    //GETTERS AND SETTERS
     public String getFabricante() {
         return fabricante;
     }
@@ -186,6 +187,7 @@ public class Automovil {
     }
 
     //METODO TOSTRING
+    @Override
     public String toString() {
         return "Automovil{" +
                 "fabricante= " + fabricante + '\''
@@ -194,7 +196,7 @@ public class Automovil {
                 ", capacidadTanque" + capacidadTanque + '\'' +
                 ", colorMatricula: " + Automovil.colorMatricula + '\'' +
                 " idVehiculo: " + id +
-                " idVehiculo: " + this.getTipo().getNombre() +
+                " idVehiculo: " + this.getTipo().getNombre() + //MOSTRAR DATOS CON TIPOS DE ENUM
                 '}';
 
     }
