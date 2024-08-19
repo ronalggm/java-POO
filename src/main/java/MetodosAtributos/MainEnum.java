@@ -40,6 +40,7 @@ public class MainEnum {
         TipoAutomovil tipoMazda = mazda.getTipo();
         TipoAutomovil tipoMercedez = mercedez.getTipo();
 
+        System.out.println("SWITCH CASE:");
         switch (tipoSubaru) {
             case CONVERTIBLE -> System.out.println("El automovil es convertible");
             case FURGON -> System.out.println("El automovil es un furgon");
@@ -48,6 +49,18 @@ public class MainEnum {
             case PICKUP -> System.out.println("El automovil es un pickUp");
             case SEDAN -> System.out.println("El automovil es un Sedan");
             case STATION_WAGON -> System.out.println("El automovil es un stationWagon");
+        }
+        //ITERAR UNA CLASE DE TIPO ENUM:
+        TipoAutomovil[] tipos = TipoAutomovil.values();
+        for (TipoAutomovil e : tipos) {
+            System.out.println(
+                    e +
+                            " ==> " + e.name()
+                            + ", " + e.getNombre() + ", "
+                            + e.getDescripcion()
+                            + ", "
+                            + e.getNumeroPuerta());
+            ;
         }
 
     }
