@@ -6,17 +6,18 @@ public enum Color {
     AZUL("Azul"),
     BLANCO("Blanco"),
     NARANJA("Naranja");
-    private final String color;
 
-    public String getColor() {
-        return color;
-    }
+    private final String color;
 
     Color(String color) {
         this.color = color;
 
     }
 
+
+    public String getColor() {
+        return color;
+    }
 
 }
 

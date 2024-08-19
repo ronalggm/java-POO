@@ -18,8 +18,8 @@ public class MaineDos {
         mazda.setModelo("rx7");
         mazda.setCilindrada(4.2);
         mazda.setColor(Color.BLANCO);
-
-        Automovil mercedez = new Automovil("mercedez", "blk",Color.AMARILLO, 2.4);
+        mazda.setTipo(TipoAutomovil.SEDAN);
+        Automovil mercedez = new Automovil("mercedez", "blk", Color.AMARILLO, 2.4);
 
         System.out.println(subaru.toString());
         System.out.println(mazda.toString());
@@ -27,9 +27,11 @@ public class MaineDos {
         System.out.println(Automovil.VELOCIDAD_MAX_CARRETERA);
         System.out.println(Automovil.VELOCIDAD_MAX_CIUDAD);
 
-  //EJEMPO UTILIZANDO LA ENUM:
-        Automovil ferrari=new Automovil();
+        //EJEMPO UTILIZANDO LA ENUM:
+        Automovil ferrari = new Automovil();
         ferrari.setColor(Color.AZUL);
 
     }
+
+
 }

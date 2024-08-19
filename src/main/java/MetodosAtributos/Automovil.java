@@ -20,9 +20,17 @@ public class Automovil {
     //CONSTANTES
     public static final Integer VELOCIDAD_MAX_CARRETERA = 160;
     public static final int VELOCIDAD_MAX_CIUDAD = 60;
+
+    //CONSTANTES COLORES DE FORMA CLASICA
     public static final String COLOR_AMARILLO = "Amarillo";
     public static final String COLOR_ROJO = "Rojo";
     public static final String COLOR_VERDE = "Verde";
+    public static final String COLOR_AZUL = "Azul";
+    public static final String COLOR_BLANCO = "Blanco";
+    public static final String COLOR_GRIS = "Gris Oscuro";
+
+    //CONSTANTES CON ENUM
+    private TipoAutomovil tipo;
 
 
     //Constructores anidados (ahorramos codigo  )
@@ -148,7 +156,17 @@ public class Automovil {
     public Color getColorMatricula() {
         return Automovil.colorMatricula;
     }
-    //metodo comparativo
+
+    public TipoAutomovil getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoAutomovil tipo) {
+        this.tipo = tipo;
+    }
+
+
+    //METODO COMPARATIVO
 
     @Override
     public boolean equals(Object obj) {
@@ -167,6 +185,7 @@ public class Automovil {
                 this.modelo.equals(a.getModelo());
     }
 
+    //METODO TOSTRING
     public String toString() {
         return "Automovil{" +
                 "fabricante= " + fabricante + '\''
@@ -175,6 +194,7 @@ public class Automovil {
                 ", capacidadTanque" + capacidadTanque + '\'' +
                 ", colorMatricula: " + Automovil.colorMatricula + '\'' +
                 " idVehiculo: " + id +
+                " idVehiculo: " + this.getTipo().getNombre() +
                 '}';
 
     }
