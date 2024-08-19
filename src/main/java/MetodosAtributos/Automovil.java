@@ -74,28 +74,6 @@ public class Automovil {
                 "\nauto.colorMatricula =" + Automovil.colorMatricula;
     }
 
-    public String acelerar(int rpm) {
-        return "el auto " + this.fabricante + "acelerando a" + rpm + " rpm";
-    }
-
-    public String frenar() {
-        return this.fabricante + " " + this.modelo + "frenando";
-    }
-
-    public String acelerarFrenar(int rpm) {
-        String acelerar = this.acelerar(rpm);
-        String frenar = this.frenar();
-        return acelerar + "\n" + frenar;
-    }
-
-    public float calcularConsumo(int km, float porcentajeBencina) {
-        return km / (capacidadTanque * porcentajeBencina);
-    }
-
-
-    public float calcularConsumo(int km, int porcentajeBencina) {
-        return km / (capacidadTanque * (porcentajeBencina / 100f));
-    }
 
     //GETTERS AND SETTERS
     public String getFabricante() {
@@ -166,6 +144,7 @@ public class Automovil {
         this.tipo = tipo;
     }
 
+//METODOS LOGICOS
 
     //METODO COMPARATIVO
 
@@ -197,8 +176,32 @@ public class Automovil {
                 ", colorMatricula: " + Automovil.colorMatricula + '\n' +
                 " idVehiculo: " + id +
                 '\n' + " Tipo: " + this.getTipo().getNombre() + //MOSTRAR DATOS CON TIPOS DE ENUM
-                "' }'" ;
+                "' }'";
 
+    }
+
+
+    public String acelerar(int rpm) {
+        return "el auto " + this.fabricante + "acelerando a" + rpm + " rpm";
+    }
+
+    public String frenar() {
+        return this.fabricante + " " + this.modelo + "frenando";
+    }
+
+    public String acelerarFrenar(int rpm) {
+        String acelerar = this.acelerar(rpm);
+        String frenar = this.frenar();
+        return acelerar + "\n" + frenar;
+    }
+
+    public float calcularConsumo(int km, float porcentajeBencina) {
+        return km / (capacidadTanque * porcentajeBencina);
+    }
+
+
+    public float calcularConsumo(int km, int porcentajeBencina) {
+        return km / (capacidadTanque * (porcentajeBencina / 100f));
     }
 
 
