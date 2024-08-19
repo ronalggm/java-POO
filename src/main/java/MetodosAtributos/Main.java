@@ -1,6 +1,6 @@
 package MetodosAtributos;
 
-public class MaineDos {
+public class Main {
     public static void main(String[] args) {
 
 
@@ -33,13 +33,12 @@ public class MaineDos {
         System.out.println(subaru.toString());
         System.out.println();
         System.out.println(mazda.toString());
+        System.out.println();
 
 
-
-        //EJEMPO UTILIZANDO LA ENUM:
-        Automovil ferrari = new Automovil();
-        ferrari.setColor(Color.AZUL);
-
+        //EJEMPO UTILIZANDO LA ENUM: y sin setear el tipo de vehiculo
+        Automovil ferrari = new Automovil("Ferrari", "f40", Color.ROJO);
+        System.out.println(ferrari.toString());
     }
 
 

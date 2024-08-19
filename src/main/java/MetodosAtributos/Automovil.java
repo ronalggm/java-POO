@@ -168,6 +168,14 @@ public class Automovil {
     //METODO TOSTRING
     @Override
     public String toString() {
+        String tipo = "";
+        try {
+            tipo = getTipo().getNombre();
+
+        } catch (NullPointerException e) {
+            tipo = "no tiene tipo";
+        }
+
         return "Automovil {" +
                 "fabricante= " + fabricante + '\n'
                 + ", modelo='" + modelo + '\n'
@@ -175,8 +183,9 @@ public class Automovil {
                 ", capacidadTanque" + capacidadTanque + '\n' +
                 ", colorMatricula: " + Automovil.colorMatricula + '\n' +
                 " idVehiculo: " + id +
-                '\n' + " Tipo: " + this.getTipo().getNombre() + //MOSTRAR DATOS CON TIPOS DE ENUM
+                '\n' + " Tipo: " + tipo + //MOSTRAR DATOS CON TIPOS DE ENUM
                 "' }'";
+
 
     }
 
