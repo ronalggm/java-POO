@@ -31,10 +31,10 @@ public class MaineDos {
 
 
         System.out.println(subaru.toString());
+        System.out.println();
         System.out.println(mazda.toString());
 
-        System.out.println(Automovil.VELOCIDAD_MAX_CARRETERA);
-        System.out.println(Automovil.VELOCIDAD_MAX_CIUDAD);
+
 
         //EJEMPO UTILIZANDO LA ENUM:
         Automovil ferrari = new Automovil();

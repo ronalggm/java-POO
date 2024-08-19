@@ -3,7 +3,7 @@ package MetodosAtributos;
 public class Automovil {
     //FORMAS DE PARAMETRIZAR CONSTRUCTORES Y METODOS CON FINAL O CON ENUM
 
-    /*en este caso se utilizo enum para todas los constructores y metodos, pero se pueden
+    /*En este caso se utilizo enum para todas los constructores y metodos, pero se pueden
     cambiar por las constantes clasicas*/
 
     private String fabricante;
@@ -189,15 +189,15 @@ public class Automovil {
     //METODO TOSTRING
     @Override
     public String toString() {
-        return "Automovil{" +
-                "fabricante= " + fabricante + '\''
-                + ", modelo='" + modelo + '\''
+        return "Automovil {" +
+                "fabricante= " + fabricante + '\n'
+                + ", modelo='" + modelo + '\n'
                 + ", color='" + cilindrada +
-                ", capacidadTanque" + capacidadTanque + '\'' +
-                ", colorMatricula: " + Automovil.colorMatricula + '\'' +
+                ", capacidadTanque" + capacidadTanque + '\n' +
+                ", colorMatricula: " + Automovil.colorMatricula + '\n' +
                 " idVehiculo: " + id +
-                " idVehiculo: " + this.getTipo().getNombre() + //MOSTRAR DATOS CON TIPOS DE ENUM
-                '}';
+                '\n' + " Tipo: " + this.getTipo().getNombre() + //MOSTRAR DATOS CON TIPOS DE ENUM
+                "' }'" ;
 
     }
 
