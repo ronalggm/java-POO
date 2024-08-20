@@ -1,7 +1,7 @@
 package MetodosAtributos;
 
 public class Automovil {
-    //FORMAS DE PARAMETRIZAR CONSTRUCTORES Y METODOS CON FINAL O CON ENUM
+                    //FORMAS DE PARAMETRIZAR CONSTRUCTORES Y METODOS CON FINAL O CON ENUM
 
     /*En este caso se utilizo enum para todas los constructores y metodos, pero se pueden
     cambiar por las constantes clasicas*/
