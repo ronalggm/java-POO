@@ -36,6 +36,9 @@ public class Automovil {
     private TipoAutomovil tipo;
 
 
+
+
+
     //Constructores anidados (ahorramos codigo  )
 
     public Automovil() {
@@ -67,6 +70,15 @@ public class Automovil {
         this.tanque = tanque;
     }
 
+    public Automovil(String fabricante, String modelo, Motor motor, Color color, Tanque tanque, Rueda[] ruedas, Persona conductor) {
+        this.fabricante = fabricante;
+        this.modelo = modelo;
+        this.motor = motor;
+        this.color = color;
+        this.tanque = tanque;
+        this.ruedas = ruedas;
+        this.conductor = conductor;
+    }
 
     public String verDetalle() {
         return "auto.fabricante=" + this.fabricante +
@@ -203,15 +215,23 @@ public class Automovil {
             tipo = "no tiene tipo";
         }
 
-        return "Automovil {" +
-                "fabricante= " + fabricante + '\n'
-                + ", modelo='" + modelo + '\n'
-                + ", color='" + color.getColor()+'\n'
-                + ", capacidadTanque" + tanque.getCapacidad() + '\n'
-                + ", colorMatricula: " + Automovil.colorMatricula + '\n'
+        return "Automovil {"
+                + "fabricante= " + fabricante
+                + '\n'
+                + ", modelo='" + modelo
+                + '\n'
+                + ", color='" + color.getColor()
+                +'\n'
+                + ", capacidadTanque"
+                + tanque.getCapacidad()
+                + '\n'
+                + ", colorMatricula: " + Automovil.colorMatricula
+                + '\n'
                 + " idVehiculo: " + id
-                + '\n' + " Tipo: " + tipo
-                + '\n'+" Motor: "+motor.getCilindrada()
+                + '\n'
+                + " Tipo: " + tipo
+                + '\n'
+                +" Motor: "+motor.getCilindrada()
                 + "' }'";
 
 
