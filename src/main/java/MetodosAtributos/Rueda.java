@@ -1,6 +1,23 @@
 package MetodosAtributos;
 
 public class Rueda {
+    public Rueda(String fabricante, double ancho, int aro) {
+        this.fabricante = fabricante;
+        this.ancho = ancho;
+        this.aro = aro;
+    }
+
+    public String getFabricante() {
+        return fabricante;
+    }
+
+    public double getAncho() {
+        return ancho;
+    }
+
+    public int getAro() {
+        return aro;
+    }
 
     private String fabricante;
     private double ancho;

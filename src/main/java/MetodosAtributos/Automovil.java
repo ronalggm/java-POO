@@ -1,7 +1,7 @@
 package MetodosAtributos;
 
 public class Automovil {
-                    //FORMAS DE PARAMETRIZAR CONSTRUCTORES Y METODOS CON FINAL O CON ENUM
+    //FORMAS DE PARAMETRIZAR CONSTRUCTORES Y METODOS CON FINAL O CON ENUM
 
     /*En este caso se utilizo enum para todas los constructores y metodos, pero se pueden
     cambiar por las constantes clasicas*/
@@ -9,10 +9,12 @@ public class Automovil {
     private String fabricante;
     private String modelo;
     private Color color = Color.AZUL;
-    private double cilindrada;
-    private int capacidadTanque = 40;
+    private Motor motor;
+    private Tanque tanque;
     private int id;
-    private String getColorMatricula;
+    private Color ColorMatricula;
+    private Persona conductor;
+    private Rueda[] ruedas;
     //statics
     private static int ultimoId;
     private static Color colorMatricula = Color.BLANCO;
@@ -28,6 +30,7 @@ public class Automovil {
     public static final String COLOR_AZUL = "Azul";
     public static final String COLOR_BLANCO = "Blanco";
     public static final String COLOR_GRIS = "Gris Oscuro";
+
 
     //CONSTANTES CON ENUM
     private TipoAutomovil tipo;
@@ -54,15 +57,14 @@ public class Automovil {
 
     }
 
-    public Automovil(String fabricante, String modelo, Color color, double cilindrada) {
+    public Automovil(String fabricante, String modelo, Color color, Motor motor) {
         this(fabricante, modelo, color);
-        this.cilindrada = cilindrada;
+        this.motor = motor;
     }
 
-
-    public Automovil(String fabricante, String modelo, Color color, double cilindrada, int capacidadTanque) {
-        this(fabricante, modelo, color, cilindrada); //mismo ejemplo que arriba
-        this.capacidadTanque = capacidadTanque;
+    public Automovil(String fabricante, String modelo, Color color, Motor motor, Tanque tanque) {
+        this(fabricante, modelo, color, motor);
+        this.tanque = tanque;
     }
 
 
@@ -70,7 +72,7 @@ public class Automovil {
         return "auto.fabricante=" + this.fabricante +
                 "\nauto.modelo = " + this.modelo +
                 "\nauto.color = " + this.color +
-                "\nauto.cilindrada = " + this.cilindrada +
+                "\nauto.cilindrada = " + this.motor.getCilindrada() +
                 "\nauto.colorMatricula =" + Automovil.colorMatricula;
     }
 
@@ -84,6 +86,7 @@ public class Automovil {
         this.fabricante = fabricante;
     }
 
+
     public String getModelo() {
         return modelo;
     }
@@ -91,6 +94,7 @@ public class Automovil {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
+
 
     public Color getColor() {
         return color;
@@ -100,21 +104,24 @@ public class Automovil {
         this.color = color;
     }
 
-    public double getCilindrada() {
-        return cilindrada;
+
+    public Motor getMotor() {
+        return motor;
     }
 
-    public void setCilindrada(double cilindrada) {
-        this.cilindrada = cilindrada;
+    public void setMotor(Motor motor) {
+        this.motor = motor;
     }
 
-    public int getCapacidadTanque() {
-        return capacidadTanque;
+
+    public Tanque getTanque() {
+        return tanque;
     }
 
-    public void setCapacidadTanque(int capacidadTanque) {
-        this.capacidadTanque = capacidadTanque;
+    public void setTanque(Tanque tanque) {
+        this.tanque = tanque;
     }
+
 
     public void setId(int id) {
         this.id = id;
@@ -128,16 +135,36 @@ public class Automovil {
         return Automovil.ultimoId;
     }
 
-    public void setColorMatricula(String colorMatricula) {
-        this.getColorMatricula = colorMatricula;
+
+    public void setColorMatricula(Color colorMatricula) {
+        this.ColorMatricula = colorMatricula;
     }
 
     public Color getColorMatricula() {
         return Automovil.colorMatricula;
     }
 
+
     public TipoAutomovil getTipo() {
         return tipo;
+    }
+
+
+    public Persona getConductor() {
+        return conductor;
+    }
+
+    public void setConductor(Persona conductor) {
+        this.conductor = conductor;
+    }
+
+
+    public Rueda[] getRuedas() {
+        return ruedas;
+    }
+
+    public void setRuedas(Rueda[] ruedas) {
+        this.ruedas = ruedas;
     }
 
     public void setTipo(TipoAutomovil tipo) {
@@ -179,12 +206,13 @@ public class Automovil {
         return "Automovil {" +
                 "fabricante= " + fabricante + '\n'
                 + ", modelo='" + modelo + '\n'
-                + ", color='" + cilindrada +
-                ", capacidadTanque" + capacidadTanque + '\n' +
-                ", colorMatricula: " + Automovil.colorMatricula + '\n' +
-                " idVehiculo: " + id +
-                '\n' + " Tipo: " + tipo + //MOSTRAR DATOS CON TIPOS DE ENUM
-                "' }'";
+                + ", color='" + color.getColor()+'\n'
+                + ", capacidadTanque" + tanque.getCapacidad() + '\n'
+                + ", colorMatricula: " + Automovil.colorMatricula + '\n'
+                + " idVehiculo: " + id
+                + '\n' + " Tipo: " + tipo
+                + '\n'+" Motor: "+motor.getCilindrada()
+                + "' }'";
 
 
     }
@@ -205,12 +233,13 @@ public class Automovil {
     }
 
     public float calcularConsumo(int km, float porcentajeBencina) {
-        return km / (capacidadTanque * porcentajeBencina);
+        return km / (this.tanque.getCapacidad() * porcentajeBencina);
     }
 
 
     public float calcularConsumo(int km, int porcentajeBencina) {
-        return km / (capacidadTanque * (porcentajeBencina / 100f));
+
+        return km / (this.tanque.getCapacidad() * (porcentajeBencina / 100f));
     }
 
 

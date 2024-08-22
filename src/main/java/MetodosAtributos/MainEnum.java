@@ -9,7 +9,7 @@ public class MainEnum {
         subaru.setModelo("Impresa");
         subaru.setCilindrada(2.0);
         subaru.setColor(Color.NARANJA);
-        subaru.setColorMatricula(Automovil.COLOR_AMARILLO); //constante de forma clasica
+        subaru.setColorMatricula(Color.BLANCO); //constante de forma clasica
         subaru.setTipo(TipoAutomovil.COUPE);
         System.out.println();
 
@@ -26,7 +26,8 @@ public class MainEnum {
                 "mercedez",
                 "blk",
                 Color.AMARILLO,
-                2.4);
+                new Motor(2.0, TipoMotor.NAFTA));
+
         mercedez.setTipo(TipoAutomovil.SEDAN);
 
 
