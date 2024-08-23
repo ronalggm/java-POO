@@ -17,7 +17,7 @@ public class Main {
         Automovil mazda = new Automovil();
         mazda.setFabricante("Mazda");
         mazda.setModelo("rx7");
-        mazda.setCilindrada(4.2);
+        mazda.setMotor(new Motor(2.0,TipoMotor.DIESEL));
         mazda.setColor(Color.BLANCO);
         mazda.setTipo(TipoAutomovil.SEDAN);
 
@@ -26,7 +26,7 @@ public class Main {
                 "mercedez",
                 "blk",
                 Color.AMARILLO,
-                new Motor(2.0,""));
+                new Motor(2.0,TipoMotor.DIESEL));
 
         mercedez.setTipo(TipoAutomovil.SEDAN);
 

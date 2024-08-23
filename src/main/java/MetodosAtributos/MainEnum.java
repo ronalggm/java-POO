@@ -13,6 +13,7 @@ public class MainEnum {
         subaru.setColorMatricula(Color.BLANCO); //constante de forma clasica
         subaru.setTipo(TipoAutomovil.COUPE);
         System.out.println();
+        subaru.setTanque(new Tanque(30));
 
 //OBJETO DE TIPO AUTOMOVIL CON CONSTRUCTOR SIMPLE
         Automovil mazda = new Automovil();
@@ -21,6 +22,8 @@ public class MainEnum {
         mazda.setMotor(new Motor(2.0, TipoMotor.NAFTA));
         mazda.setColor(Color.BLANCO);
         mazda.setTipo(TipoAutomovil.SEDAN);
+        mazda.setTanque(new Tanque(40));
+
 
         //CON CONSTRUCTOR POR PARAMETROS
         Automovil mercedez = new Automovil(
