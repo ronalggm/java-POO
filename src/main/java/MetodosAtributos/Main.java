@@ -7,7 +7,7 @@ public class Main {
         Automovil subaru = new Automovil();
         subaru.setFabricante("Subaru");
         subaru.setModelo("Impresa");
-        subaru.setCilindrada(2.0);
+        subaru.setMotor(new Motor(2.0,TipoMotor.NAFTA));
         subaru.setColor(Color.NARANJA);
         subaru.setColorMatricula(Color.BLANCO); //constante de forma clasica
         subaru.setTipo(TipoAutomovil.COUPE);

@@ -36,9 +36,6 @@ public class Automovil {
     private TipoAutomovil tipo;
 
 
-
-
-
     //Constructores anidados (ahorramos codigo  )
 
     public Automovil() {
@@ -60,25 +57,35 @@ public class Automovil {
 
     }
 
-    public Automovil(String fabricante, String modelo, Color color, Motor motor) {
+    public Automovil(String fabricante, String modelo,
+                     Color color, Motor motor) {
+
         this(fabricante, modelo, color);
         this.motor = motor;
     }
 
-    public Automovil(String fabricante, String modelo, Color color, Motor motor, Tanque tanque) {
+
+    public Automovil(String fabricante, String modelo,
+                     Color color, Motor motor,
+                     Tanque tanque) {
+
         this(fabricante, modelo, color, motor);
         this.tanque = tanque;
     }
 
-    public Automovil(String fabricante, String modelo, Motor motor, Color color, Tanque tanque, Rueda[] ruedas, Persona conductor) {
-        this.fabricante = fabricante;
-        this.modelo = modelo;
-        this.motor = motor;
-        this.color = color;
-        this.tanque = tanque;
+    public Automovil(String fabricante, String modelo,
+                     Motor motor, Color color,
+                     Tanque tanque, Rueda[] ruedas,
+                     Persona conductor) {
+
+        this(fabricante, modelo, color, motor);
         this.ruedas = ruedas;
         this.conductor = conductor;
     }
+
+
+
+
 
     public String verDetalle() {
         return "auto.fabricante=" + this.fabricante +
@@ -221,7 +228,7 @@ public class Automovil {
                 + ", modelo='" + modelo
                 + '\n'
                 + ", color='" + color.getColor()
-                +'\n'
+                + '\n'
                 + ", capacidadTanque"
                 + tanque.getCapacidad()
                 + '\n'
@@ -231,7 +238,7 @@ public class Automovil {
                 + '\n'
                 + " Tipo: " + tipo
                 + '\n'
-                +" Motor: "+motor.getCilindrada()
+                + " Motor: " + motor.getCilindrada()
                 + "' }'";
 
 

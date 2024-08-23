@@ -7,7 +7,8 @@ public class MainEnum {
         Automovil subaru = new Automovil();
         subaru.setFabricante("Subaru");
         subaru.setModelo("Impresa");
-        subaru.setCilindrada(2.0);
+        Motor motorSubaru = new Motor(2.0, TipoMotor.NAFTA);
+        subaru.setMotor(motorSubaru);
         subaru.setColor(Color.NARANJA);
         subaru.setColorMatricula(Color.BLANCO); //constante de forma clasica
         subaru.setTipo(TipoAutomovil.COUPE);
@@ -17,7 +18,7 @@ public class MainEnum {
         Automovil mazda = new Automovil();
         mazda.setFabricante("Mazda");
         mazda.setModelo("rx7");
-        mazda.setCilindrada(4.2);
+        mazda.setMotor(new Motor(2.0, TipoMotor.NAFTA));
         mazda.setColor(Color.BLANCO);
         mazda.setTipo(TipoAutomovil.SEDAN);
 
