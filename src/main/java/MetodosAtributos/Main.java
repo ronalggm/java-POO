@@ -7,7 +7,7 @@ public class Main {
         Automovil subaru = new Automovil();
         subaru.setFabricante("Subaru");
         subaru.setModelo("Impresa");
-        subaru.setMotor(new Motor(2.0,TipoMotor.NAFTA));
+        subaru.setMotor(new Motor(2.0, TipoMotor.NAFTA));
         subaru.setColor(Color.NARANJA);
         subaru.setColorMatricula(Color.BLANCO); //constante de forma clasica
         subaru.setTipo(TipoAutomovil.COUPE);
@@ -17,16 +17,16 @@ public class Main {
         Automovil mazda = new Automovil();
         mazda.setFabricante("Mazda");
         mazda.setModelo("rx7");
-        mazda.setMotor(new Motor(2.0,TipoMotor.DIESEL));
+        mazda.setMotor(new Motor(2.0, TipoMotor.DIESEL));
         mazda.setColor(Color.BLANCO);
         mazda.setTipo(TipoAutomovil.SEDAN);
-
+        mazda.setTanque(new Tanque(60));
         //CON CONSTRUCTOR POR PARAMETROS
         Automovil mercedez = new Automovil(
                 "mercedez",
                 "blk",
                 Color.AMARILLO,
-                new Motor(2.0,TipoMotor.DIESEL));
+                new Motor(2.0, TipoMotor.DIESEL));
 
         mercedez.setTipo(TipoAutomovil.SEDAN);
 

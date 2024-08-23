@@ -56,8 +56,10 @@ public class MainEnum {
             case STATION_WAGON -> System.out.println("El automovil es un stationWagon");
         }
         System.out.println();
-        System.out.println("Recorriendo array");
+        System.out.println("Recorriendo array:");
+
         //ITERAR UNA CLASE DE TIPO ENUM:
+        System.out.println("Iterar los tipo de automoviles");
         TipoAutomovil[] tipos = TipoAutomovil.values();
         for (TipoAutomovil e : tipos) {
             System.out.println(

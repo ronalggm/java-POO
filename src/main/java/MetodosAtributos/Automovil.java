@@ -76,19 +76,28 @@ public class Automovil {
     public Automovil(String fabricante, String modelo,
                      Motor motor, Color color,
                      Tanque tanque, Rueda[] ruedas,
-                     Persona conductor) {
-
+                     Persona conductor)
+    {
         this(fabricante, modelo, color, motor);
         this.ruedas = ruedas;
         this.conductor = conductor;
     }
 
-
-
-
+    public Automovil(String fabricante, String modelo,
+                     Color color, Motor motor,
+                     Tanque tanque, TipoAutomovil tipo)
+    {
+        this(fabricante, modelo, color, motor, tanque);
+        this.tipo = tipo;
+    }
 
     public String verDetalle() {
-        return "auto.fabricante=" + this.fabricante +
+       String detalle="";
+        if(this.getTipo()!=null){
+
+        }
+        
+        return detalle="auto.fabricante=" + this.fabricante +
                 "\nauto.modelo = " + this.modelo +
                 "\nauto.color = " + this.color +
                 "\nauto.cilindrada = " + this.motor.getCilindrada() +
