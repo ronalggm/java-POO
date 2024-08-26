@@ -1,5 +1,7 @@
 package MetodosAtributos;
 
+import org.apache.commons.compress.harmony.pack200.CpBands;
+
 public class Automovil {
     //FORMAS DE PARAMETRIZAR CONSTRUCTORES Y METODOS CON FINAL O CON ENUM
 
@@ -8,7 +10,7 @@ public class Automovil {
 
     private String fabricante;
     private String modelo;
-    private Color color = Color.AZUL;
+    private Color color;
     private Motor motor;
     private Tanque tanque;
     private int id;
@@ -76,8 +78,7 @@ public class Automovil {
     public Automovil(String fabricante, String modelo,
                      Motor motor, Color color,
                      Tanque tanque, Rueda[] ruedas,
-                     Persona conductor)
-    {
+                     Persona conductor) {
         this(fabricante, modelo, color, motor);
         this.ruedas = ruedas;
         this.conductor = conductor;
@@ -85,23 +86,9 @@ public class Automovil {
 
     public Automovil(String fabricante, String modelo,
                      Color color, Motor motor,
-                     Tanque tanque, TipoAutomovil tipo)
-    {
+                     Tanque tanque, TipoAutomovil tipo) {
         this(fabricante, modelo, color, motor, tanque);
         this.tipo = tipo;
-    }
-
-    public String verDetalle() {
-       String detalle="";
-        if(this.getTipo()!=null){
-
-        }
-        
-        return detalle="auto.fabricante=" + this.fabricante +
-                "\nauto.modelo = " + this.modelo +
-                "\nauto.color = " + this.color +
-                "\nauto.cilindrada = " + this.motor.getCilindrada() +
-                "\nauto.colorMatricula =" + Automovil.colorMatricula;
     }
 
 
@@ -143,6 +130,10 @@ public class Automovil {
 
 
     public Tanque getTanque() {
+        if (tanque == null) {
+            this.tanque = new Tanque();
+        }
+
         return tanque;
     }
 
@@ -223,34 +214,44 @@ public class Automovil {
     //METODO TOSTRING
     @Override
     public String toString() {
-        String tipo = "";
-        try {
-            tipo = getTipo().getNombre();
 
-        } catch (NullPointerException e) {
-            tipo = "no tiene tipo";
-        }
+
+        String tipoStr = (this.tipo.getNombre() != null) ? this.tipo.getNombre() : "no tiene tipo";
+        String fabricante = (this.fabricante != null) ? this.fabricante : "no tiene fabricante";
+        String modelo = (this.modelo != null) ? this.modelo : "no tiene modelo";
+        String color = (this.color != null && this.color.getColor() != null) ? this.color.getColor() : "no tiene color";
+        String tanqueCapacidad = (this.tanque != null) ? String.valueOf(this.tanque.getCapacidad()) : "no tiene tanque";
+        String motorCilindrada = (this.motor != null) ? String.valueOf(this.motor.getCilindrada()) : "no tiene motor";
 
         return "Automovil {"
-                + "fabricante= " + fabricante
-                + '\n'
-                + ", modelo='" + modelo
-                + '\n'
-                + ", color='" + color.getColor()
-                + '\n'
-                + ", capacidadTanque"
-                + tanque.getCapacidad()
-                + '\n'
-                + ", colorMatricula: " + Automovil.colorMatricula
-                + '\n'
-                + " idVehiculo: " + id
-                + '\n'
-                + " Tipo: " + tipo
-                + '\n'
-                + " Motor: " + motor.getCilindrada()
+                + "fabricante= " + fabricante + '\n'
+                + ", modelo= " + modelo + '\n'
+                + ", color= " + color + '\n'
+                + ", capacidadTanque= " + tanqueCapacidad + '\n'
+                + ", colorMatricula= " + Automovil.colorMatricula + '\n'
+                + " idVehiculo= " + id + '\n'
+                + " Tipo= " + tipoStr + '\n'
+                + " Motor= " + motorCilindrada
                 + "' }'";
 
 
+    }
+
+
+    public String verDetalle() {
+        /*En este caso vamos sumando cadenas segun si algun valor es null o no*/
+        String detalle = "\nauto.id=" + this.id +
+                "\nauto.fabricante=" + this.fabricante +
+                "\nauto.modelo = " + this.modelo;
+
+        if (this.getTipo() != null) {
+            detalle += "auto.tipo=" + this.getTipo().getDescripcion();
+        }
+        detalle += "\nauto.tipo= " + "No tiene tipo" +
+                "\nauto.color = " + this.color +
+                "\nauto.cilindrada = " + this.motor.getCilindrada() +
+                "\nauto.colorMatricula =" + Automovil.colorMatricula;
+        return detalle;
     }
 
 
