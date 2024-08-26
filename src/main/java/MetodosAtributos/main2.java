@@ -8,7 +8,7 @@ public class main2 {
                 "focus",
                 Color.AZUL,
                 new Motor(3.0, TipoMotor.NAFTA),
-                new Tanque(60),TipoAutomovil.SEDAN);
+                new Tanque(60), TipoAutomovil.SEDAN);
 
         System.out.println(ford.toString());
 
@@ -17,12 +17,12 @@ public class main2 {
                 "Mustang",
                 Color.AZUL,
                 new Motor(3.0, TipoMotor.NAFTA),
-                new Tanque(60),TipoAutomovil.SEDAN
-                );
+                new Tanque(60), TipoAutomovil.SEDAN
+        );
+        fordMustang.toString();
 
-
-
-
+        Automovil mclaren = new Automovil();
+        mclaren.setMotor(new Motor(3.0, TipoMotor.DIESEL));
+        mclaren.setTanque(new Tanque(90));
     }
-
 }
