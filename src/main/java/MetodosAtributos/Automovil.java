@@ -221,7 +221,7 @@ public class Automovil {
         String modelo = (this.modelo != null) ? this.modelo : "no tiene modelo";
         String color = (this.color != null && this.color.getColor() != null) ? this.color.getColor() : "no tiene color";
         String tanqueCapacidad = (this.tanque != null) ? String.valueOf(this.tanque.getCapacidad()) : "no tiene tanque";
-        String motorCilindrada = (this.motor != null) ? String.valueOf(this.motor.getCilindrada()) : "no tiene motor";
+        double motorCilindrada = (this.motor.getCilindrada() != 0) ? this.motor.getCilindrada():0.0;
 
         return "Automovil {"
                 + "fabricante= " + fabricante + '\n'
