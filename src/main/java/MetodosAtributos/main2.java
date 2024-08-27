@@ -27,15 +27,23 @@ public class main2 {
         mclaren.setTanque(new Tanque(90));
         mclaren.setModelo("f1");
         mclaren.setFabricante("Mclaren");
-
+        mclaren.setTipo(TipoAutomovil.SEDAN);
         System.out.println();
         //con logica toString (con try catch)
         System.out.println(mclaren.toString());
+        TipoAutomovil tipo = TipoAutomovil.COUPE;
 
         //con logica de ver detalle (con condicionales)
         System.out.println(mclaren.verDetalle());
-//logica getTanque
+        //logica getTanque
         //System.out.println(mclaren.getTanque());
+
+        System.out.println();
+        Automovil fiat = new Automovil("Fiat", "cronos", Color.BLANCO);
+//fiat no tiene seteado:
+        /*Tipo automovil*/
+        System.out.println(fiat.toString());
+
 
     }
 }

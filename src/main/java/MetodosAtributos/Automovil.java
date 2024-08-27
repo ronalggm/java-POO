@@ -51,7 +51,7 @@ public class Automovil {
 
     }
 
-    public Automovil(String fabricante, String modelo, Color color) {
+    public Automovil(String fabricante, String modelo, Color color              ) {
 
         this(fabricante, modelo);/*Implicitamente con this() llamamos al constructor
                 de arriba que tiene los dos parametros fabricante y modelo*/
@@ -215,8 +215,7 @@ public class Automovil {
     @Override
     public String toString() {
 
-
-        String tipoStr = (this.tipo.getNombre() != null) ? this.tipo.getNombre() : "no tiene tipo";
+        String tipoStr = (this.tipo != null && this.tipo.getNombre() != null) ? this.tipo.getNombre() : "no tiene tipo";
         String fabricante = (this.fabricante != null) ? this.fabricante : "no tiene fabricante";
         String modelo = (this.modelo != null) ? this.modelo : "no tiene modelo";
         String color = (this.color != null && this.color.getColor() != null) ? this.color.getColor() : "no tiene color";
