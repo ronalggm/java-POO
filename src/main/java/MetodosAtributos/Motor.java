@@ -2,7 +2,7 @@ package MetodosAtributos;
 
 public class Motor {
 
-    private double cilindrada;
+    private Double cilindrada;
     private TipoMotor tipo;
 
     public Motor() {
@@ -13,7 +13,7 @@ public class Motor {
         this.tipo = tipo;
     }
 
-    public double getCilindrada() {
+    public Double getCilindrada() {
         return cilindrada;
     }
 

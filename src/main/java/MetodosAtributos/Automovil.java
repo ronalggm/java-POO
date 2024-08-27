@@ -221,7 +221,11 @@ public class Automovil {
         String modelo = (this.modelo != null) ? this.modelo : "no tiene modelo";
         String color = (this.color != null && this.color.getColor() != null) ? this.color.getColor() : "no tiene color";
         String tanqueCapacidad = (this.tanque != null) ? String.valueOf(this.tanque.getCapacidad()) : "no tiene tanque";
-        double motorCilindrada = (this.motor.getCilindrada() != 0) ? this.motor.getCilindrada():0.0;
+       // double motorCilindrada = (this.motor.getCilindrada() != 0) ? this.motor.getCilindrada():0.0;
+
+        String motorCilindrada = (this.motor != null && this.motor.getCilindrada() != null)
+                ? String.valueOf(this.motor.getCilindrada())//se convierte a string un objeto de tipo Double (cilindrada)
+                : "no se asignó cilindrada";
 
         return "Automovil {"
                 + "fabricante= " + fabricante + '\n'
