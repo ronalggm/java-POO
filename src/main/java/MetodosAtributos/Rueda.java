@@ -1,7 +1,7 @@
 package MetodosAtributos;
 
 public class Rueda {
-    public Rueda(String fabricante, double ancho, int aro) {
+    public Rueda(String fabricante, int aro, double ancho ) {
         this.fabricante = fabricante;
         this.ancho = ancho;
         this.aro = aro;

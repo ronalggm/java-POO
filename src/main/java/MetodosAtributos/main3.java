@@ -3,9 +3,13 @@ package MetodosAtributos;
 public class main3 {
     public static void main(String[] args) {
 
-        Persona conductorFord = new Persona("Luci", "Martinez");
+        Rueda[] ruedasFord = new Rueda[5];
+        ruedasFord[0] = new Rueda("Yokohama", 16,7.5 );
 
-        Automovil ford = new Automovil("Ford",
+        Persona conductorFord = new Persona("Luci", "Martinez");
+        //persona seteada fura del constructor
+        Automovil ford = new Automovil(
+                "Ford",
                 "focus",
                 Color.AZUL,
                 new Motor(3.0, TipoMotor.NAFTA),
@@ -15,23 +19,31 @@ public class main3 {
 
         System.out.println(ford.toString());
 
+
         Persona conducrtorFordMustang = new Persona("pato", "gomez");
+//persona utilizada por el constructor
         Automovil fordMustang = new Automovil("Ford",
                 "Mustang",
                 Color.AZUL,
                 new Motor(3.0, TipoMotor.NAFTA),
-                new Tanque(60), TipoAutomovil.SEDAN
+                new Tanque(60),
+                TipoAutomovil.SEDAN,
+                null, conducrtorFordMustang
         );
+
+        fordMustang.setConductor(conducrtorFordMustang);
         fordMustang.toString();
 
 
-        Automovil mclaren = new Automovil();
-        mclaren.setMotor(new Motor(3.0, TipoMotor.DIESEL));
-        mclaren.setTanque(new Tanque(90));
-        mclaren.setModelo("f1");
-        mclaren.setFabricante("Mclaren");
-        mclaren.setTipo(TipoAutomovil.SEDAN);
-        System.out.println();
+        Persona conductorMcLaren = new Persona("Bea", "Rodriguez");
+
+        Automovil mclaren = new Automovil(
+                "mClaren",
+                "f1",
+                Color.NARANJA,
+                new Motor(3.0, TipoMotor.NAFTA),
+                new Tanque(80),
+                TipoAutomovil.SEDAN);
 
 
     }

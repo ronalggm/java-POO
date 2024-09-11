@@ -51,7 +51,7 @@ public class Automovil {
 
     }
 
-    public Automovil(String fabricante, String modelo, Color color              ) {
+    public Automovil(String fabricante, String modelo, Color color) {
 
         this(fabricante, modelo);/*Implicitamente con this() llamamos al constructor
                 de arriba que tiene los dos parametros fabricante y modelo*/
@@ -68,20 +68,9 @@ public class Automovil {
 
 
     public Automovil(String fabricante, String modelo,
-                     Color color, Motor motor,
-                     Tanque tanque) {
-
+                     Color color, Motor motor, Tanque tanque) {
         this(fabricante, modelo, color, motor);
         this.tanque = tanque;
-    }
-
-    public Automovil(String fabricante, String modelo,
-                     Motor motor, Color color,
-                     Tanque tanque, Rueda[] ruedas,
-                     Persona conductor) {
-        this(fabricante, modelo, color, motor);
-        this.ruedas = ruedas;
-        this.conductor = conductor;
     }
 
     public Automovil(String fabricante, String modelo,
@@ -91,6 +80,15 @@ public class Automovil {
         this.tipo = tipo;
     }
 
+    public Automovil(String fabricante, String modelo,
+                     Color color, Motor motor,
+                     Tanque tanque, TipoAutomovil tipo,
+                     Rueda[] ruedas, Persona conductor) {
+
+        this(fabricante, modelo, color, motor, tanque, tipo);
+        this.ruedas = ruedas;
+        this.conductor = conductor;
+    }
 
     //GETTERS AND SETTERS
     public String getFabricante() {
@@ -220,7 +218,7 @@ public class Automovil {
         String modelo = (this.modelo != null) ? this.modelo : "no tiene modelo";
         String color = (this.color != null && this.color.getColor() != null) ? this.color.getColor() : "no tiene color";
         String tanqueCapacidad = (this.tanque != null) ? String.valueOf(this.tanque.getCapacidad()) : "no tiene tanque";
-       // double motorCilindrada = (this.motor.getCilindrada() != 0) ? this.motor.getCilindrada():0.0;
+        // double motorCilindrada = (this.motor.getCilindrada() != 0) ? this.motor.getCilindrada():0.0;
 
         String motorCilindrada = (this.motor != null && this.motor.getCilindrada() != null)
                 ? String.valueOf(this.motor.getCilindrada())//se convierte a string un objeto de tipo Double (cilindrada)
