@@ -4,11 +4,10 @@ public class main3 {
     public static void main(String[] args) {
 
         Rueda[] ruedasFord = new Rueda[5];
-        ruedasFord[0] = new Rueda("Yokohama", 16, 7.5);
-        ruedasFord[1] = new Rueda("Yokohama", 16, 7.5);
-        ruedasFord[2] = new Rueda("Yokohama", 16, 7.5);
-        ruedasFord[3] = new Rueda("Yokohama", 16, 7.5);
-        ruedasFord[4] = new Rueda("Yokohama", 16, 7.5);
+        for (int i = 0; i < ruedasFord.length; i++) {
+            ruedasFord[i] = new Rueda("Yokohama", 16, 7.5);
+        }
+
 
         //OBJETO SETEADO DESDE METODOS:
         Persona conductorFord = new Persona("Luci", "Martinez");
@@ -27,13 +26,11 @@ public class main3 {
         ford.setRuedas(ruedasFord);
 
 
-        Rueda[] ruedasMaz = {
-                new Rueda("Michelin", 18, 10.5),
-                new Rueda("Michelin", 18, 10.6),
-                new Rueda("Michelin", 18, 10.6),
-                new Rueda("Michelin", 18, 10.6),
-                new Rueda("Michelin", 18, 10.6),
-        };
+        Rueda[] ruedasMaz = new Rueda[5];
+        for (int i = 0; i < ruedasMaz.length; i++) {
+            ruedasMaz[i] = new Rueda("Michelin", 18, 10.5);
+        }
+
 
         //persona utilizada instanciada dentro del constructor
         //objeto completamente seteado con constructor
@@ -51,14 +48,10 @@ public class main3 {
         mazda.setConductor(pato);
         mazda.toString();
 
-        Rueda[] rudedasNissan = {
-                new Rueda("Pirelli", 20, 11.5),
-                new Rueda("Pirelli", 20, 11.5),
-                new Rueda("Pirelli", 20, 11.5),
-                new Rueda("Pirelli", 20, 11.5),
-                new Rueda("Pirelli", 20, 11.5)
-        };
-
+        Rueda[] ruedasNissan = new Rueda[5];
+        for (int i = 0; i < ruedasNissan.length; i++) {
+            new Rueda("Pirelli", 20, 11.5);
+        }
         Persona Bea = new Persona("Bea", "Rodriguez");
         Automovil nissan = new Automovil(
                 "Nissan",
@@ -67,7 +60,7 @@ public class main3 {
                 new Motor(3.0, TipoMotor.NAFTA),
                 new Tanque(80),
                 TipoAutomovil.SEDAN,
-                rudedasNissan, Bea);
+                ruedasNissan, Bea);
 
         //EJEMPLO EXACTO DEL VIDEO
 
@@ -81,11 +74,9 @@ public class main3 {
         nissan2.setTanque(new Tanque());
         nissan2.setConductor(lalo);
 
-for(Rueda r:ford.getRuedas()){
-    System.out.println(r.getFabricante()+" "+r.getAro()+" "+r.getAncho());
-}
 
-
+        //ver detalles
+        System.out.println(mazda.verDetalle());
 
 
     }

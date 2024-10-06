@@ -35,7 +35,7 @@ public class Automovil {
 
 
     //CONSTANTES CON ENUM
-    private TipoAutomovil tipo;
+    private TipoAutomovil tipoAutomovil;
 
 
     //Constructores anidados (ahorramos codigo  )
@@ -77,7 +77,7 @@ public class Automovil {
                      Color color, Motor motor,
                      Tanque tanque, TipoAutomovil tipo) {
         this(fabricante, modelo, color, motor, tanque);
-        this.tipo = tipo;
+        this.tipoAutomovil = tipo;
     }
 
     public Automovil(String fabricante, String modelo,
@@ -163,7 +163,7 @@ public class Automovil {
 
 
     public TipoAutomovil getTipo() {
-        return tipo;
+        return tipoAutomovil;
     }
 
 
@@ -185,7 +185,7 @@ public class Automovil {
     }
 
     public void setTipo(TipoAutomovil tipo) {
-        this.tipo = tipo;
+        this.tipoAutomovil = tipo;
     }
 
 //METODOS LOGICOS
@@ -213,7 +213,7 @@ public class Automovil {
     @Override
     public String toString() {
 
-        String tipoStr = (this.tipo != null && this.tipo.getNombre() != null) ? this.tipo.getNombre() : "no tiene tipo";
+        String tipoStr = (this.tipoAutomovil != null && this.tipoAutomovil.getNombre() != null) ? this.tipoAutomovil.getNombre() : "no tiene tipo";
         String fabricante = (this.fabricante != null) ? this.fabricante : "no tiene fabricante";
         String modelo = (this.modelo != null) ? this.modelo : "no tiene modelo";
         String color = (this.color != null && this.color.getColor() != null) ? this.color.getColor() : "no tiene color";
@@ -245,13 +245,31 @@ public class Automovil {
                 "\nauto.fabricante=" + this.fabricante +
                 "\nauto.modelo = " + this.modelo;
 
-        if (this.getTipo() != null) {
-            detalle += "auto.tipo=" + this.getTipo().getDescripcion();
+        if (getColor() != null) {
+            detalle += "\nauto.color" + this.color;
         }
-        detalle += "\nauto.tipo= " + "No tiene tipo" +
-                "\nauto.color = " + this.color +
-                "\nauto.cilindrada = " + this.motor.getCilindrada() +
-                "\nauto.colorMatricula =" + Automovil.colorMatricula;
+
+        if (this.getTipo() != null) {
+            detalle += "\nauto.tipo=" + this.getTipo().getDescripcion();
+        }
+        if (this.getMotor() != null) {
+            detalle += "\nauto.cilindrada = " + this.getMotor().getCilindrada();
+        }
+        if (this.getColorMatricula() != null) {
+            detalle += "\nauto.colorMatricula =" + this.getColorMatricula();
+        }
+        if (getConductor() != null) {
+            detalle += "\nNombre del conductor: " + this.getConductor();
+        }
+
+
+        if (getRuedas() != null) {
+            detalle += "\nRuedas del automovil: ";
+            for (Rueda r : this.getRuedas()) {
+                detalle += "\n" + r.getFabricante() + ", aro: " + r.getAro() + ", ancho:" + r.getAncho();
+            }
+        }
+
         return detalle;
     }
 
