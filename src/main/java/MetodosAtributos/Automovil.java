@@ -17,7 +17,7 @@ public class Automovil {
     private Color ColorMatricula;
     private Persona conductor;
     private Rueda[] ruedas;
-    private int indiceRuedas;
+    private int indexRuedas;
     //statics
     private static int ultimoId;
     private static Color colorMatricula = Color.BLANCO;
@@ -43,6 +43,7 @@ public class Automovil {
 
     public Automovil() {
         this.id = ++ultimoId;
+        this.ruedas = new Rueda[5];
     }
 
     public Automovil(String fabricante, String modelo) {
@@ -187,13 +188,14 @@ public class Automovil {
 
     //METODO ADD para ruedas
     public void addRueda(Rueda rueda) {
-        if (indiceRuedas <= ruedas.length) {
-            this.ruedas[indiceRuedas++] = rueda;
+        if (indexRuedas < this.ruedas.length) {
+            this.ruedas[indexRuedas++] = rueda;
         } else {
-            System.out.println("no se pueden agregar mas ruedas");
+            System.out.println("No se pueden agregar mas ruedas");
         }
     }
 
+//--------------------------------------------------------------------------------------
 
     public void setTipo(TipoAutomovil tipo) {
         this.tipoAutomovil = tipo;
