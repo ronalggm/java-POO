@@ -16,7 +16,7 @@ public enum TipoAutomovil {
     TipoAutomovil(String nombre, String descripcion, int numeroPuerta) {
         this.nombre = nombre;
         this.numeroPuerta = numeroPuerta;
-        this.descripcion = descripcion;
+        this.descripcion= descripcion;
     }
 
     public String getNombre() {

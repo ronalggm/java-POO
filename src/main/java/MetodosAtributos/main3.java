@@ -3,10 +3,6 @@ package MetodosAtributos;
 public class main3 {
     public static void main(String[] args) {
 
-        Rueda[] ruedasFord = new Rueda[5];
-        for (int i = 0; i < ruedasFord.length; i++) {
-            ruedasFord[i] = new Rueda("Yokohama", 16, 7.5);
-        }
 
 
         //OBJETO SETEADO DESDE METODOS:
@@ -23,14 +19,20 @@ public class main3 {
         ford.setColor(Color.BLANCO);
         ford.setTipo(TipoAutomovil.SEDAN);
         ford.setConductor(conductorFord);
-        ford.setRuedas(ruedasFord);
+        // ford.setRuedas(ruedasFord);
 
+        Rueda[] ruedasFord = new Rueda[5];
+        for (int i = 0; i < ruedasFord.length; i++) {
+           ford.addRueda(new Rueda("Yokohama",16,7.5));
+        }
 
+       //forma sin metodo add
         Rueda[] ruedasMaz = new Rueda[5];
         for (int i = 0; i < ruedasMaz.length; i++) {
             ruedasMaz[i] = new Rueda("Michelin", 18, 10.5);
         }
 
+ford.addRueda( new Rueda("CSC",14,53));
 
         //persona utilizada instanciada dentro del constructor
         //objeto completamente seteado con constructor
@@ -63,6 +65,10 @@ public class main3 {
                 ruedasNissan, Bea);
 
         //EJEMPLO EXACTO DEL VIDEO
+        Rueda[] ruedasNissan2 = new Rueda[5];
+        for (int i = 0; i < ruedasNissan2.length; i++) {
+            new Rueda("MOMO", 17, 11.5);
+        }
 
         Persona lalo = new Persona("lalo", "Rodrgiguez");
         Automovil nissan2 = new Automovil(
@@ -70,6 +76,7 @@ public class main3 {
                 "petete",
                 Color.AMARILLO,
                 new Motor(3.0, TipoMotor.DIESEL));
+
         nissan2.setTipo(TipoAutomovil.PICKUP);
         nissan2.setTanque(new Tanque());
         nissan2.setConductor(lalo);
