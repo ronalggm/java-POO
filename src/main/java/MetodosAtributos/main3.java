@@ -4,7 +4,6 @@ public class main3 {
     public static void main(String[] args) {
 
 
-
         //OBJETO SETEADO DESDE METODOS:
         Persona conductorFord = new Persona("Luci", "Martinez");
         //persona seteada fura del constructor
@@ -19,20 +18,19 @@ public class main3 {
         ford.setColor(Color.BLANCO);
         ford.setTipo(TipoAutomovil.SEDAN);
         ford.setConductor(conductorFord);
-        // ford.setRuedas(ruedasFord);
 
         Rueda[] ruedasFord = new Rueda[5];
         for (int i = 0; i < ruedasFord.length; i++) {
-           ford.addRueda(new Rueda("Yokohama",16,7.5));
+            ford.addRueda(new Rueda("Yokohama", 16, 7.5));
         }
 
-       //forma sin metodo add
+        //forma sin metodo add
         Rueda[] ruedasMaz = new Rueda[5];
         for (int i = 0; i < ruedasMaz.length; i++) {
             ruedasMaz[i] = new Rueda("Michelin", 18, 10.5);
         }
 
-ford.addRueda( new Rueda("CSC",14,53));
+        ford.addRueda(new Rueda("CSC", 14, 53));
 
         //persona utilizada instanciada dentro del constructor
         //objeto completamente seteado con constructor
@@ -50,10 +48,12 @@ ford.addRueda( new Rueda("CSC",14,53));
         mazda.setConductor(pato);
         mazda.toString();
 
+
         Rueda[] ruedasNissan = new Rueda[5];
         for (int i = 0; i < ruedasNissan.length; i++) {
-            new Rueda("Pirelli", 20, 11.5);
+            ruedasNissan[i] = new Rueda("Pirelli", 20, 11.5);
         }
+
         Persona Bea = new Persona("Bea", "Rodriguez");
         Automovil nissan = new Automovil(
                 "Nissan",
@@ -63,6 +63,7 @@ ford.addRueda( new Rueda("CSC",14,53));
                 new Tanque(80),
                 TipoAutomovil.SEDAN,
                 ruedasNissan, Bea);
+
 
         //EJEMPLO EXACTO DEL VIDEO
         Rueda[] ruedasNissan2 = new Rueda[5];
@@ -80,6 +81,18 @@ ford.addRueda( new Rueda("CSC",14,53));
         nissan2.setTipo(TipoAutomovil.PICKUP);
         nissan2.setTanque(new Tanque());
         nissan2.setConductor(lalo);
+
+
+        Rueda[] ruedasFerrari = new Rueda[5];
+        for (int i = 0; i < ruedasFerrari.length; i++) {
+            ruedasFerrari[i] = new Rueda("Continental", 17, 11.5);
+        }
+
+        Automovil ferrarif40 = new Automovil(
+                "Ferrari", "f40",
+                Color.ROJO, new Motor(3.4, TipoMotor.NAFTA),
+                new Tanque(90), TipoAutomovil.SEDAN, ruedasFerrari,
+                new Persona("TONY", "COLAPINTO"));
 
 
         //ver detalles

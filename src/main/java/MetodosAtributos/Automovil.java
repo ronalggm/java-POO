@@ -191,7 +191,7 @@ public class Automovil {
         if (indexRuedas < this.ruedas.length) {
             this.ruedas[indexRuedas++] = rueda;
         } else {
-            System.out.println("No se pueden agregar mas ruedas");
+            System.out.println("No se pu eden agregar mas ruedas");
         }
     }
 
